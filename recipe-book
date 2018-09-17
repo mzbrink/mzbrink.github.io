@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project: Recipe book</title>
+        <meta charset="utf-8">
+        <style>
+            .deets {
+                color: green;
+            }
+            
+            h2 {
+                background-color:rgb(0,250,200);
+            }
+            
+            thead {
+                background-color: rgb(0, 204, 255);
+            }
+            
+            tbody {
+                background-color: rgb(140, 255, 247);
+            }
+        </style>
+    </head>
+    <body>
+       
+        <h1>Zach's recipe book</h1>
+        
+        <h2>Contents:</h2>
+        
+        <ol>
+            <li><a href="#drunk-spag">Spaghetti all'ubriaco</a></li>
+            <li><a href="#fried-pizza">Fried pizza</a></li>
+            <li><a href="#pesto-pasta">Pesto pasta and potatoes</a></li>
+        </ol>
+        
+        <h2 id="drunk-spag">Spaghetti all'ubriaco</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Spaghetti_al_nero_di_seppia.jpg" width="200">
+        <ul>
+            <li class="deets">Time: 20 minutes</li>
+            <li class="deets">Serves: 4</li>
+        </ul>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Extra-virgin olive oil</td>
+                    <td>1⁄4 cup</td>
+                </tr>
+                <tr>
+                    <td>Garlic, smashed</td>
+                    <td>2 cloves</td>
+                </tr>
+                <tr>
+                    <td>Kosher salt</td>
+                    <td>1⁄4 tsp.</td>
+                </tr>
+                <tr>
+                    <td>Red chile flakes</td>
+                    <td>1⁄8 tsp.</td>
+                </tr>
+                <tr>
+                    <td>Sangiovese</td>
+                    <td>1 bottle (750 ml.)</td>
+                </tr>
+                <tr>
+                    <td>Spaghetti</td>
+                    <td>1 lb.</td>
+                </tr>
+                <tr>
+                    <td>Beef bouillon</td>
+                    <td>1⁄4 cube</td>
+                </tr>
+                <tr>
+                    <td>Finely chopped oregano</td>
+                    <td>2 tsp.</td>
+                </tr>
+                <tr>
+                    <td>Finely chopped parsley</td>
+                    <td>2 sprigs</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Step 1:</strong> Bring a large pot of water to a boil.</p>
+        
+        <p><strong>Step 2:</strong> In a large, high-sided skillet, add the oil, garlic, salt, and chile flakes. Heat over medium-high, stirring occasionally, until the garlic is softened and just beginning to brown, about 3 minutes. Pour in the red wine (stand back as the liquid may splatter) and bring to a rapid boil.</p>
+        
+        <p><strong>Step 3:</strong> Meanwhile, season the boiling water generously with salt. Add the spaghetti and cook for 2 minutes.</p>
+        
+        <p><strong>Step 4:</strong> Transfer the spaghetti to the pot with the boiling red wine, and add the bouillon and 1 teaspoon of the oregano; cook, stirring occasionally with tongs, until the spaghetti is tender, 6-8 minutes.</p>
+        
+        <p><strong>Step 5:</strong> Transfer the pasta to a platter and top with the remaining oregano and the parsley. Serve immediately.</p>
+        
+    <p><em>Source: <a target="_blank" href="https://www.saveur.com/drunken-spaghetti-wine-recipe">Saveur</a></em></p>
+    
+    <h2 id="fried-pizza">Fried pizza</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/250px-Eq_it-na_pizza-margherita_sep2005_sml.jpg" width="200">
+        <ul>
+            <li class="deets">Time: 80 minutes</li>
+            <li class="deets">Serves: 6</li>
+        </ul>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Pizza dough</td>
+                    <td>1 package</td>
+                </tr>
+                <tr>
+                    <td>Oil</td>
+                    <td>Enough</td>
+                </tr>
+                <tr>
+                    <td>Tomato sauce</td>
+                    <td>1 can</td>
+                </tr>
+                <tr>
+                    <td>Fresh basil</td>
+                    <td>1 handful</td>
+                </tr>
+                <tr>
+                    <td>Red pepper flakes</td>
+                    <td>1 pinch</td>
+                </tr>
+                <tr>
+                    <td>Parmesan cheese</td>
+                    <td>1 dusting</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Step 1:</strong> Make the pizza dough according to package directions. Let the dough rise (for DeLallo pizza dough, the rise time is 45 minutes).</p>
+        
+        <p><strong>Step 2:</strong> Divide the pizza dough into 6 sections. Roll each into a ball and flatten into a pizza shape (mine were about 6-8 inches in diameter and about 1/2 inch thick around the outside).</p>
+        
+        <p><strong>Step 3:</strong> Heat a large cast iron skillet with oil (about 1 inch deep). Turn the heat to medium/low. Test the oil by dropping a speck of water in it – when it sizzles or bubbles, then the oil is ready.</p>
+        
+        <p><strong>Step 4:</strong> Working one at a time, gently place the pizzas into the oil and fry for 30 seconds to 1 minute until light golden brown. Flip with tongs and repeat on the other side. Transfer to a paper towel lined pan to cool.</p>
+        
+        <p><strong>Step 5:</strong> Preheat the oven to 450 degrees. Spread each pizza with sauce, cheese, and any other toppings you want. Bake for 5-10 minutes or until the cheese is melted. Top with fresh basil, pesto, or anything else you want and serve warm. And then enjoy those puffy, crispy, personal-pan-sized bites of pizza crust! YUMMMMM.</p>
+        
+    <p><em>Source: <a target="_blank" href="https://pinchofyum.com/life-changing-fried-pizzas">Pinch of Yum</a></em></p>
+    
+    <h2 id="pesto-pasta">Pesto pasta and potatoes</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Pasta_with_pesto.jpg" width="200">
+        <ul>
+            <li class="deets">Time: 30 minutes</li>
+            <li class="deets">Serves: 12</li>
+        </ul>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingredients</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Small red potatoes, halved</td>
+                    <td>1-1/2 lbs.</td>
+                </tr>
+                <tr>
+                    <td>Uncooked whole grain spiral pasta</td>
+                    <td>12 oz.</td>
+                </tr>
+                <tr>
+                    <td>Cut fresh or frozen green beans</td>
+                    <td>3 cups</td>
+                </tr>
+                <tr>
+                    <td>Prepared pesto</td>
+                    <td>1 jar (6-1/2 oz.)</td>
+                </tr>
+                <tr>
+                    <td>Grated Parmigiano-Reggiano cheese</td>
+                    <td>1 cup</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Step 1:</strong> Place potatoes in a large saucepan; add water to cover. Bring to a boil. Reduce heat; cook, uncovered, until tender, 8-10 minutes. Drain; transfer to a large bowl.</p>
+        
+        <p><strong>Step 2:</strong> Meanwhile, cook pasta according to package directions, adding green beans during the last 5 minutes of cooking. Drain, reserving 3/4 cup pasta water, and add to potatoes. Toss with pesto, cheese and enough pasta water to moisten.</p>
+        
+    <p><em>Source: <a target="_blank" href="https://www.tasteofhome.com/recipes/pesto-pasta---potatoes/">Taste of Home</a></em></p>
+    
+    </body>
+</html>
