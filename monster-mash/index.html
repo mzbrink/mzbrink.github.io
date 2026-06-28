@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Monster Mash</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z' fill='%23ece7dd'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="gate">
+      <p class="kicker">You're Invited</p>
+      <h1 class="wordmark"><span class="the">The</span>Monster Mash</h1>
+      <p class="lede">A monstrous wedding celebration.<br>Speak the magic word to enter.</p>
+
+      <form id="gate-form" autocomplete="off">
+        <input type="password" id="pw" name="pw"
+               placeholder="• • • • • • •" aria-label="Password" autofocus>
+        <button class="btn btn--solid" type="submit">Enter</button>
+        <p class="error" id="err" role="alert"></p>
+      </form>
+
+      <p class="hint">The magic word is on your invitation.</p>
+    </div>
+  </div>
+
+  <script src="guard.js"></script>
+  <script>
+    const form = document.getElementById('gate-form');
+    const pw = document.getElementById('pw');
+    const err = document.getElementById('err');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      err.textContent = '';
+      const ok = await mmTryUnlock(pw.value);
+      if (ok) {
+        location.href = 'home.html';
+      } else {
+        err.textContent = 'The spirits don’t recognize that word…';
+        pw.value = '';
+        form.classList.remove('shake');
+        void form.offsetWidth; // restart the animation
+        form.classList.add('shake');
+        pw.focus();
+      }
+    });
+  </script>
+</body>
+</html>

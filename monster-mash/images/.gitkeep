@@ -1,0 +1,3 @@
+# Drop your banner illustration here as banner.png
+# Then, in home.html, swap the <div class="banner-fallback"> for:
+#   <img class="banner" src="images/banner.png" alt="The Monster Mash">

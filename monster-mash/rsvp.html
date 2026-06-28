@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script>if(!sessionStorage.getItem('mm-auth')){location.replace('index.html');}</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RSVP · The Monster Mash</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z' fill='%23ece7dd'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a href="home.html">Home</a>
+      <a href="vibes.html">Vibes</a>
+      <a href="travel.html">Out-of-Towners</a>
+      <a href="gifts.html">Gifts</a>
+      <a href="rsvp.html" aria-current="page">RSVP</a>
+    </nav>
+
+    <h2>RSVP</h2>
+    <p class="lede">Kindly reply by <strong>September 24, 2026</strong>.</p>
+
+    <p class="center">Tap below to summon our RSVP form.</p>
+
+    <!-- EDIT ME: replace the href with your Google Form link (e.g. https://forms.gle/abc123). -->
+    <div class="btn-row">
+      <a class="btn btn--solid" href="#" target="_blank" rel="noopener">Open the RSVP form</a>
+    </div>
+    <p class="center muted" style="font-size:.9rem">
+      (Form link coming soon — paste your Google Form URL into this page. See README.)
+    </p>
+
+    <!-- OPTIONAL — to embed the form right on this page instead of linking out,
+         delete the button above and un-comment this block, replacing the src
+         with your Google Form's "Send → < >" embed link:
+
+    <div style="margin-top:24px">
+      <iframe
+        title="RSVP form"
+        src="https://docs.google.com/forms/d/e/REPLACE-ME/viewform?embedded=true"
+        width="100%" height="900" frameborder="0"
+        style="background:#fff">Loading…</iframe>
+    </div>
+    -->
+
+    <footer class="foot">The Monster Mash · 10 · 24 · 2026 · Fremont Foundry</footer>
+  </div>
+</body>
+</html>
