@@ -1,0 +1,376 @@
+/* =========================================================
+   The Monster Mash — shared styles
+   A monster-prom wedding, à la Rankin-Bass "Mad Monster Party"
+   Palette: black, bone-white, and black-and-white patterns.
+   ========================================================= */
+
+:root {
+  --bg:        #0b0b0c;   /* near-black */
+  --bg-2:      #131316;   /* raised panel */
+  --ink:       #ece7dd;   /* bone white */
+  --ink-soft:  #c3bdb1;
+  --muted:     #8b857a;
+  --line:      rgba(236, 231, 221, 0.16);
+  --line-2:    rgba(236, 231, 221, 0.38);
+  --maxw:      720px;
+
+  /* Black & white pattern fills */
+  --stripes:  repeating-linear-gradient(45deg,
+                var(--ink) 0 2px, transparent 2px 11px);
+  --halftone: radial-gradient(var(--ink) 1.1px, transparent 1.4px);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.65;
+  letter-spacing: 0.1px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Faint halftone texture behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--halftone);
+  background-size: 18px 18px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px 22px 80px;
+}
+
+/* ---------- Type ---------- */
+
+h1, h2, h3, .wordmark {
+  font-family: "Cinzel Decorative", "Cinzel", Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: 0 0 0.2em;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.15rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 0.5em;
+}
+
+p { margin: 0 0 1em; }
+
+a { color: var(--ink); text-underline-offset: 3px; }
+a:hover { text-decoration: none; }
+
+.kicker {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.42em;
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin: 0 0 1.2em;
+  padding-left: 0.42em; /* optical centering for letter-spacing */
+}
+
+.lede {
+  text-align: center;
+  font-size: 1.18rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  max-width: 38ch;
+  margin: 0 auto 2em;
+}
+
+.muted { color: var(--muted); }
+.center { text-align: center; }
+
+/* ---------- Masthead ---------- */
+
+.masthead { text-align: center; margin-bottom: 8px; }
+
+/* Banner art block: shows your illustration if present at
+   images/banner.png, otherwise a patterned placeholder. */
+.banner {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border: 1px solid var(--line-2);
+  margin-bottom: 26px;
+  filter: grayscale(1) contrast(1.05);
+}
+
+.banner-fallback {
+  position: relative;
+  height: 200px;
+  border: 1px solid var(--line-2);
+  margin-bottom: 26px;
+  background-image: var(--halftone);
+  background-size: 12px 12px;
+  background-color: var(--bg-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.banner-fallback::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+              transparent 30%, var(--bg) 100%);
+}
+
+.wordmark {
+  font-size: clamp(2.1rem, 8.5vw, 3.9rem);
+  margin: 0;
+  line-height: 1.05;
+}
+.wordmark .the {
+  display: block;
+  font-size: 0.34em;
+  letter-spacing: 0.5em;
+  padding-left: 0.5em;
+  color: var(--ink-soft);
+  margin-bottom: 0.2em;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 22px;
+  margin: 22px auto 4px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  padding-left: 0.2em;
+  white-space: nowrap;
+}
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+/* ---------- Dividers & ornaments ---------- */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 44px auto;
+  color: var(--muted);
+}
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.moon { width: 22px; height: 22px; flex: none; fill: var(--ink-soft); }
+
+/* ---------- Facts (when / where / parking) ---------- */
+
+.facts {
+  margin: 0 auto 8px;
+  max-width: 30rem;
+}
+.fact {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+.fact:first-child { border-top: 1px solid var(--line); }
+.fact .label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+  padding-left: 0.28em;
+}
+.fact .value { font-size: 1.22rem; }
+.fact .value strong { font-weight: 600; }
+.fact .sub { color: var(--ink-soft); font-size: 0.98rem; }
+
+/* ---------- Timeline ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 30rem;
+}
+.timeline li {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.timeline .t {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: "Cinzel Decorative", Georgia, serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.82rem;
+  padding: 14px 30px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  transition: background .18s ease, color .18s ease;
+}
+.btn:hover { background: var(--ink); color: var(--bg); }
+.btn--solid { background: var(--ink); color: var(--bg); }
+.btn--solid:hover { background: transparent; color: var(--ink); }
+.btn-row { text-align: center; margin: 28px 0 8px; }
+
+/* ---------- Cards / lists ---------- */
+
+.card {
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+  padding: 22px 24px;
+  margin: 0 0 18px;
+}
+.card h3 { margin-bottom: 0.35em; }
+.card p:last-child { margin-bottom: 0; }
+
+.stack { display: grid; gap: 16px; }
+
+ul.clean { list-style: none; padding: 0; margin: 0 0 1em; }
+ul.clean li { padding: 7px 0; border-bottom: 1px solid var(--line); }
+ul.clean li:last-child { border-bottom: 0; }
+
+/* ---------- Swatches (vibes page) ---------- */
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin: 8px 0 4px;
+}
+.swatch {
+  width: 84px; height: 84px;
+  border: 1px solid var(--line-2);
+  display: flex; align-items: flex-end; justify-content: center;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+}
+.swatch span {
+  background: var(--bg);
+  color: var(--ink);
+  padding: 1px 5px;
+}
+.sw-black { background: #000; }
+.sw-white { background: var(--ink); color: #000; }
+.sw-white span { background: #000; color: var(--ink); }
+.sw-stripe { background-image: var(--stripes); background-color: #000; }
+.sw-check {
+  background:
+    conic-gradient(#000 90deg, var(--ink) 0 180deg,
+                   #000 0 270deg, var(--ink) 0) 0 0 / 28px 28px;
+}
+.sw-dot {
+  background-image: radial-gradient(#fff 26%, transparent 28%);
+  background-size: 18px 18px;
+  background-color: #000;
+}
+
+/* ---------- Password gate ---------- */
+
+.gate { min-height: 78vh; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; text-align: center; }
+.gate form { margin-top: 26px; width: 100%; max-width: 22rem; }
+.gate input[type="password"] {
+  width: 100%;
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1.05rem;
+  letter-spacing: 0.18em;
+  text-align: center;
+  padding: 13px 14px;
+  margin-bottom: 14px;
+}
+.gate input:focus { outline: none; border-color: var(--ink); }
+.gate .hint { color: var(--muted); font-size: 0.92rem; margin-top: 18px; }
+.gate .error {
+  color: var(--ink);
+  min-height: 1.4em;
+  font-style: italic;
+  margin: 2px 0 0;
+}
+.shake { animation: shake .4s; }
+@keyframes shake {
+  10%,90%{transform:translateX(-2px)} 20%,80%{transform:translateX(4px)}
+  30%,50%,70%{transform:translateX(-7px)} 40%,60%{transform:translateX(7px)}
+}
+
+/* ---------- Footer ---------- */
+
+.foot {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-top: 56px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  body { font-size: 18px; }
+  .nav { gap: 4px 14px; }
+  .timeline li { grid-template-columns: 4.6rem 1fr; }
+}
