@@ -1,23 +1,26 @@
 /* =========================================================
    The Monster Mash — shared styles
    A monster-prom wedding, à la Rankin-Bass "Mad Monster Party"
-   Palette: black, bone-white, and black-and-white patterns.
+   Palette: bright orange + amber + charcoal on warm ivory.
+   (The dress-code swatches stay true black & white on purpose.)
    ========================================================= */
 
 :root {
-  --bg:        #0b0b0c;   /* near-black */
-  --bg-2:      #131316;   /* raised panel */
-  --ink:       #ece7dd;   /* bone white */
-  --ink-soft:  #c3bdb1;
-  --muted:     #8b857a;
-  --line:      rgba(236, 231, 221, 0.16);
-  --line-2:    rgba(236, 231, 221, 0.38);
+  --bg:        #f7efe0;   /* warm ivory */
+  --bg-2:      #efe4cf;   /* sand panel */
+  --ink:       #2c2723;   /* warm charcoal */
+  --ink-soft:  #5d5346;   /* muted brown */
+  --muted:     #948770;   /* taupe */
+
+  --orange:    #e0561c;   /* bright pumpkin */
+  --orange-d:  #bf440f;   /* deeper orange (hover) */
+  --amber:     #e3a01f;   /* amber / gold */
+
+  --line:      rgba(44, 39, 35, 0.16);
+  --line-2:    rgba(44, 39, 35, 0.34);
   --maxw:      720px;
 
-  /* Black & white pattern fills */
-  --stripes:  repeating-linear-gradient(45deg,
-                var(--ink) 0 2px, transparent 2px 11px);
-  --halftone: radial-gradient(var(--ink) 1.1px, transparent 1.4px);
+  --halftone:  radial-gradient(var(--ink) 1.1px, transparent 1.4px);
 }
 
 * { box-sizing: border-box; }
@@ -36,6 +39,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+::selection { background: var(--amber); color: var(--ink); }
+
 /* Faint halftone texture behind everything */
 body::before {
   content: "";
@@ -43,7 +48,7 @@ body::before {
   inset: 0;
   background-image: var(--halftone);
   background-size: 18px 18px;
-  opacity: 0.04;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 0;
 }
@@ -69,6 +74,7 @@ h2 {
   font-size: clamp(1.5rem, 5vw, 2rem);
   margin: 0 0 0.2em;
   text-align: center;
+  color: var(--ink);
 }
 
 h3 {
@@ -76,12 +82,13 @@ h3 {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin: 0 0 0.5em;
+  color: var(--orange);
 }
 
 p { margin: 0 0 1em; }
 
-a { color: var(--ink); text-underline-offset: 3px; }
-a:hover { text-decoration: none; }
+a { color: var(--orange); text-underline-offset: 3px; }
+a:hover { color: var(--orange-d); text-decoration: none; }
 
 .kicker {
   text-align: center;
@@ -110,7 +117,7 @@ a:hover { text-decoration: none; }
 .masthead { text-align: center; margin-bottom: 8px; }
 
 /* Banner art block: shows your illustration if present at
-   images/banner.png, otherwise a patterned placeholder. */
+   images/banner.png, otherwise a warm patterned placeholder. */
 .banner {
   display: block;
   width: 100%;
@@ -118,7 +125,6 @@ a:hover { text-decoration: none; }
   object-fit: cover;
   border: 1px solid var(--line-2);
   margin-bottom: 26px;
-  filter: grayscale(1) contrast(1.05);
 }
 
 .banner-fallback {
@@ -126,9 +132,8 @@ a:hover { text-decoration: none; }
   height: 200px;
   border: 1px solid var(--line-2);
   margin-bottom: 26px;
-  background-image: var(--halftone);
-  background-size: 12px 12px;
-  background-color: var(--bg-2);
+  background: radial-gradient(ellipse at center,
+              var(--amber) 0%, var(--orange) 118%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,14 +143,17 @@ a:hover { text-decoration: none; }
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center,
-              transparent 30%, var(--bg) 100%);
+  background-image: var(--halftone);
+  background-size: 11px 11px;
+  opacity: 0.14;
 }
+.banner-fallback .moon { fill: var(--bg); }
 
 .wordmark {
   font-size: clamp(2.1rem, 8.5vw, 3.9rem);
   margin: 0;
   line-height: 1.05;
+  color: var(--orange);
 }
 .wordmark .the {
   display: block;
@@ -177,10 +185,10 @@ a:hover { text-decoration: none; }
   padding-left: 0.2em;
   white-space: nowrap;
 }
-.nav a:hover { color: var(--ink); }
+.nav a:hover { color: var(--orange); }
 .nav a[aria-current="page"] {
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink);
+  color: var(--orange);
+  border-bottom: 1px solid var(--orange);
 }
 
 /* ---------- Dividers & ornaments ---------- */
@@ -198,7 +206,7 @@ a:hover { text-decoration: none; }
   height: 1px;
   background: var(--line);
 }
-.moon { width: 22px; height: 22px; flex: none; fill: var(--ink-soft); }
+.moon { width: 22px; height: 22px; flex: none; fill: var(--amber); }
 
 /* ---------- Facts (when / where / parking) ---------- */
 
@@ -243,7 +251,7 @@ a:hover { text-decoration: none; }
 .timeline .t {
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.06em;
-  color: var(--ink-soft);
+  color: var(--orange);
   text-align: right;
   white-space: nowrap;
 }
@@ -258,15 +266,15 @@ a:hover { text-decoration: none; }
   letter-spacing: 0.18em;
   font-size: 0.82rem;
   padding: 14px 30px;
-  border: 1px solid var(--ink);
-  color: var(--ink);
+  border: 1px solid var(--orange);
+  color: var(--orange);
   background: transparent;
   cursor: pointer;
   transition: background .18s ease, color .18s ease;
 }
-.btn:hover { background: var(--ink); color: var(--bg); }
-.btn--solid { background: var(--ink); color: var(--bg); }
-.btn--solid:hover { background: transparent; color: var(--ink); }
+.btn:hover { background: var(--orange); color: var(--bg); }
+.btn--solid { background: var(--orange); color: var(--bg); }
+.btn--solid:hover { background: var(--orange-d); border-color: var(--orange-d); color: var(--bg); }
 .btn-row { text-align: center; margin: 28px 0 8px; }
 
 /* ---------- Cards / lists ---------- */
@@ -286,7 +294,7 @@ ul.clean { list-style: none; padding: 0; margin: 0 0 1em; }
 ul.clean li { padding: 7px 0; border-bottom: 1px solid var(--line); }
 ul.clean li:last-child { border-bottom: 0; }
 
-/* ---------- Swatches (vibes page) ---------- */
+/* ---------- Swatches (vibes page — the dress code is B&W) ---------- */
 
 .swatches {
   display: flex;
@@ -299,24 +307,26 @@ ul.clean li:last-child { border-bottom: 0; }
   width: 84px; height: 84px;
   border: 1px solid var(--line-2);
   display: flex; align-items: flex-end; justify-content: center;
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   padding-bottom: 6px;
 }
 .swatch span {
-  background: var(--bg);
-  color: var(--ink);
-  padding: 1px 5px;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1px 6px;
 }
 .sw-black { background: #000; }
-.sw-white { background: var(--ink); color: #000; }
-.sw-white span { background: #000; color: var(--ink); }
-.sw-stripe { background-image: var(--stripes); background-color: #000; }
+.sw-black span { background: #fff; color: #000; }
+.sw-white { background: #fff; }
+.sw-white span { background: #000; color: #fff; }
+.sw-stripe {
+  background-image: repeating-linear-gradient(45deg,
+                    #000 0 2px, #fff 2px 11px);
+}
 .sw-check {
   background:
-    conic-gradient(#000 90deg, var(--ink) 0 180deg,
-                   #000 0 270deg, var(--ink) 0) 0 0 / 28px 28px;
+    conic-gradient(#000 90deg, #fff 0 180deg,
+                   #000 0 270deg, #fff 0) 0 0 / 28px 28px;
 }
 .sw-dot {
   background-image: radial-gradient(#fff 26%, transparent 28%);
@@ -331,7 +341,7 @@ ul.clean li:last-child { border-bottom: 0; }
 .gate form { margin-top: 26px; width: 100%; max-width: 22rem; }
 .gate input[type="password"] {
   width: 100%;
-  background: var(--bg-2);
+  background: #fffdf7;
   border: 1px solid var(--line-2);
   color: var(--ink);
   font-family: inherit;
@@ -341,10 +351,10 @@ ul.clean li:last-child { border-bottom: 0; }
   padding: 13px 14px;
   margin-bottom: 14px;
 }
-.gate input:focus { outline: none; border-color: var(--ink); }
+.gate input:focus { outline: none; border-color: var(--orange); }
 .gate .hint { color: var(--muted); font-size: 0.92rem; margin-top: 18px; }
 .gate .error {
-  color: var(--ink);
+  color: var(--orange-d);
   min-height: 1.4em;
   font-style: italic;
   margin: 2px 0 0;
